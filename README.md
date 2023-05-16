@@ -1,2 +1,2 @@
-
-<p>This readme file provides basic instructions on how to set up and run the Global Collaboration Rating and Review System project. Make sure to follow the installation, development, and build steps as described to ensure smooth execution of the application. The project has been developed using JavaScript, TypeScript, HTML, and SCSS, allowing for a robust and dynamic user experience.</p>
+yarn
+yarn dev

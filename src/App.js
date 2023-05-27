@@ -1,0 +1,36 @@
+import { v4 as uuidv4 } from 'uuid';
+import { useState } from 'react';
+import Header from './components/Header';
+import ProductReviewList from './components/ProductReviewList';
+import ProductReviewStats from './components/ProductReviewStats';
+import ProductData from './Data/ProductData';
+import ReviewForm from './components/ReviewForm';
+import Authentication from './components/Authentication';
+
+function App() {
+  const [review, setReview] = useState(ProductData);
+  const addReview = newReview => {
+    newReview.id = uuidv4();
+    setReview([newReview, ...review]);
+  };
+  const deleteFeedback = id => {
+   if (window.confirm('Are you sure you want to delete?')) {
+    setReview(review.filter(item => item.id !== id));
+    }
+ };
+  return (
+   <>
+   <Header />
+    <div className="container">
+      {/* <ReviewForm handleAdd={addReview} />
+      <ProductReviewStats review={review} />
+      <ProductReviewList 
+      review={review} 
+      handleDelete={deleteFeedback} 
+    /> */}
+    <Authentication />
+  </div>
+ </>
+ );
+}
+export default App;
